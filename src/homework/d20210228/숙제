@@ -1,0 +1,35 @@
+1. 데이터는 아래와 같습니다.
+List<Map<String,String>> mList = new ArrayList<>();
+
+Map<String,String> m = new HashMap<>();
+m.put("name","김길동");
+m.put("grade","3");
+m.put("point","70");
+mList.add(m);
+ m = new HashMap<>();
+m.put("name","김철수");
+m.put("grade","3");
+m.put("point","60");
+mList.add(m);
+ m = new HashMap<>();
+m.put("name","우길동");
+m.put("grade","2");
+m.put("point","65");
+mList.add(m);
+ m = new HashMap<>();
+m.put("name","최길동");
+m.put("grade","2");
+m.put("point","90");
+mList.add(m);
+ m = new HashMap<>();
+m.put("name","임꺽정");
+m.put("grade","1");
+m.put("point","80");
+mList.add(m);
+ m = new HashMap<>();
+m.put("name","임꺽정");
+m.put("grade","1");
+m.put("point","75");
+mList.add(m);
+
+2. 학년이 낮은 순으로 정렬을 하고 같은 학년일 경우 점수가 높은 순으로 정렬하는 코드를 작성하여 제출해주세요.
