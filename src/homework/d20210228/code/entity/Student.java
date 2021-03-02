@@ -5,8 +5,8 @@ import java.util.Map;
 public class Student implements Comparable<Student> {
 	
 	private String name;
-	private String grade;
-	private String point;
+	private int grade;
+	private int point;
 	
 	public Student() {
 		
@@ -14,8 +14,8 @@ public class Student implements Comparable<Student> {
 	
 	public Student(Map<String, String> map) {
 		this.name = map.get("name");
-		this.grade = map.get("grade");
-		this.point = map.get("point");
+		this.grade = Integer.parseInt(map.get("grade"));
+		this.point = Integer.parseInt(map.get("point"));
 	}
 	
 	public String getName() {
@@ -26,19 +26,19 @@ public class Student implements Comparable<Student> {
 		this.name = name;
 	}
 	
-	public String getGrade() {
+	public int getGrade() {
 		return grade;
 	}
 	
-	public void setGrade(String grade) {
+	public void setGrade(int grade) {
 		this.grade = grade;
 	}
 	
-	public String getPoint() {
+	public int getPoint() {
 		return point;
 	}
 	
-	public void setPoint(String point) {
+	public void setPoint(int point) {
 		this.point = point;
 	}
 
@@ -49,16 +49,12 @@ public class Student implements Comparable<Student> {
 
 	@Override
 	public int compareTo(Student o) {
-		int compareGrade = Integer.parseInt(o.getGrade());
-		int grade = Integer.parseInt(this.grade);
-		if(compareGrade > grade) {
+		if(o.getGrade() > grade) {
 			return -1;
-		} else if(compareGrade < grade) {
+		} else if(o.getGrade() < grade) {
 			return 1;
 		} else {
-			int comparePoint = Integer.parseInt(o.getPoint());
-			int point = Integer.parseInt(this.point);
-			if(comparePoint > point) {
+			if(o.getPoint() > point) {
 				return -1;
 			} else {
 				return 1;
