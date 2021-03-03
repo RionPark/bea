@@ -1,12 +1,11 @@
-package homework.d20210228.code.main;
+package study.exam.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import homework.d20210228.code.entity.Student;
 
 public class Homework01 {
 
@@ -43,13 +42,34 @@ public class Homework01 {
 		m.put("grade", "1");
 		m.put("point", "75");
 		mList.add(m);
+		
+		Collections.sort(mList, new Comparator<Map<String, String>>() {
 
-		List<Student> students = new ArrayList<>();
-		for (Map<String, String> map : mList) {
-			students.add(new Student(map));
-		}
-		Collections.sort(students);
-		System.out.println(students);
+			@Override
+			public int compare(Map<String, String> left, Map<String, String> right) {
+				Integer leftGrade = Integer.parseInt(left.get("grade"));
+				Integer rightGrade = Integer.parseInt(right.get("grade"));
+				if(leftGrade > rightGrade) {
+					return 1;
+				}
+				if(leftGrade < rightGrade) {
+					return -1;
+				}
+				Integer leftPoint = Integer.parseInt(left.get("point"));
+				Integer rightPoint = Integer.parseInt(right.get("point"));
+				if(leftPoint > rightPoint) {
+					return 1;
+				}
+				if(leftPoint < rightPoint) {
+					return -1;
+				}
+				return 0;
+			}
+			
+		});
+		
+		System.out.println(mList);
+		
 	}
 
 }
