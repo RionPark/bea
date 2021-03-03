@@ -51,15 +51,17 @@ public class Student implements Comparable<Student> {
 	public int compareTo(Student o) {
 		if(o.getGrade() > grade) {
 			return -1;
-		} else if(o.getGrade() < grade) {
+		} 
+		if(o.getGrade() < grade) {
 			return 1;
-		} else {
-			if(o.getPoint() > point) {
-				return -1;
-			} else {
-				return 1;
-			}
 		}
+		if(o.getPoint() > point) {
+			return -1;
+		} 
+		if(o.getPoint() < point) {
+			return 1;
+		}
+		return 0;
 	}
 
 }
