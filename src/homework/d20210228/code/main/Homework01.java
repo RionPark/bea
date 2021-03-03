@@ -1,4 +1,4 @@
-package homework01.main;
+package homework.d20210228.code.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import homework01.entity.Student;
+import homework.d20210228.code.entity.Student;
 
 public class Homework01 {
 

@@ -1,4 +1,4 @@
-package homework01.entity;
+package homework.d20210228.code.entity;
 
 import java.util.Map;
 
